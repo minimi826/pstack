@@ -1,0 +1,43 @@
+[root@maru-test ~]# pstack 18573
+Thread 1 (process 18573):
+#0  0x00007f0a5f43d1f8 in JvmtiEnv::GetThreadLocalStorage(_jobject*, void**) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#1  0x00007f09ffa882b2 in assertTLSValue () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libinstrument.so
+#2  0x00007f09ffa88335 in confirmingTLSSet () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libinstrument.so
+#3  0x00007f09ffa883cc in tryToAcquireReentrancyToken () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libinstrument.so
+#4  0x00007f09ffa85f3d in transformClassFile () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libinstrument.so
+#5  0x00007f09ffa84eef in eventHandlerClassFileLoadHook () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libinstrument.so
+#6  0x00007f0a5f461512 in JvmtiClassFileLoadHookPoster::post_to_env(JvmtiEnv*, bool) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#7  0x00007f0a5f453a65 in JvmtiExport::post_class_file_load_hook(Symbol*, Handle, Handle, unsigned char**, unsigned char**, JvmtiCachedClassFileData**) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#8  0x00007f0a5f11964c in ClassFileParser::parseClassFile(Symbol*, ClassLoaderData*, Handle, KlassHandle, GrowableArray<Handle>*, TempNewSymbol&, bool, Thread*) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#9  0x00007f0a5f722107 in SystemDictionary::resolve_from_stream(Symbol*, Handle, Handle, ClassFileStream*, bool, Thread*) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#10 0x00007f0a5f3d4f33 in jvm_define_class_common(JNIEnv_*, char const*, _jobject*, signed char const*, int, _jobject*, char const*, unsigned char, Thread*) () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#11 0x00007f0a5f3d668b in JVM_DefineClassWithSource () from /usr/local/jdk1.8.0_231/jre/lib/amd64/server/libjvm.so
+#12 0x00007f0a5e3a7e1d in Java_java_lang_ClassLoader_defineClass1 () from /usr/local/jdk1.8.0_231/jre/lib/amd64/libjava.so
+#13 0x00007f0a493e3e0b in ?? ()
+#14 0x00007f09ff9829f8 in ?? ()
+#15 0x00007f09ff982a20 in ?? ()
+#16 0x00000000f0022330 in ?? ()
+#17 0x00000000ec094f10 in ?? ()
+#18 0x00000000ec095098 in ?? ()
+#19 0x00000000f0162268 in ?? ()
+#20 0x000000000000005f in ?? ()
+#21 0x00000000f702fa30 in ?? ()
+#22 0x00000000f0162268 in ?? ()
+#23 0x00007f0a4a2597c8 in ?? ()
+#24 0x00000000ebed86e0 in ?? ()
+#25 0x00007f0a49b70ba4 in ?? ()
+#26 0x00000000ec094fb0 in ?? ()
+#27 0x00000000ebf1c648 in ?? ()
+#28 0x00000000f7cb7358 in ?? ()
+#29 0x00000000f017c098 in ?? ()
+#30 0x00000000ebf0e680 in ?? ()
+#31 0x00000000ebf125a8 in ?? ()
+#32 0x00000000ebf18e00 in ?? ()
+#33 0x00007f0a49250a1c in ?? ()
+#34 0x00001c0000001c32 in ?? ()
+#35 0x00000000ebf18e00 in ?? ()
+#36 0x0000383200000000 in ?? ()
+#37 0x00000000ebf18e00 in ?? ()
+#38 0x00000000f014f160 in ?? ()
+#39 0x00007f0a5c3d3a48 in ?? ()
+#40 0x0000000000000000 in ?? ()
